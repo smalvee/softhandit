@@ -56,7 +56,7 @@
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a>
                         <ul>
-                            <li><a href="">All Team Members</a></li>
+                            <li><a href="{{ url('teame')}}">All Team Members</a></li>
                         </ul>
                     </li>
                     <li><a href="#contact">Contact</a></li>

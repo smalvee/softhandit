@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/teame', function () {
+    return view('team/team');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';
