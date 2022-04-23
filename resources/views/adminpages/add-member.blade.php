@@ -82,7 +82,36 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <h5>Member Type</h5>
+                                        <h6 style="color:#dc3a74;">Member Type</h6>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Sl</th>
+                                                        <th scope="col">Type</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Parmanent</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Part Time</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Contract Base</td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         <!-- Button trigger modal -->
                                         <br>
                                         <button class="btn btn-primary" type="button" data-toggle="modal"
@@ -95,9 +124,9 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Add Member
+                                                        <h6 class="modal-title" id="exampleModalLabel">Add Member
                                                             Type
-                                                        </h5>
+                                                        </h6>
                                                         <button type="button" class="close"
                                                             data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
@@ -131,7 +160,31 @@
 
                                     </div>
                                     <div class="col-md-4">
-                                        <h5>Member Depertment</h5>
+                                        <h6 style="color:#dc3a74;">Member Depertment</h6>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Sl</th>
+                                                        <th scope="col">Depertment</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Front End</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Graphics Design</td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         <!-- Button trigger modal -->
                                         <br>
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -144,9 +197,9 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabe2">Add Member
+                                                        <h6 class="modal-title" id="exampleModalLabe2">Add Member
                                                             Depertment
-                                                        </h5>
+                                                        </h6>
                                                         <button type="button" class="close"
                                                             data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
@@ -179,10 +232,85 @@
                                         </div>
 
                                     </div>
-                                    {{-- <div class="col-md-4">
-                                        <label for="discription-textarea">TEXTAREA WITH DISCRIPTION</label>
-                                        <textarea rows="4" class="form-control" id="discription-textarea" placeholder="textarea with discription"></textarea>
-                                    </div> --}}
+
+                                    <div class="col-md-4">
+                                        <h6 style="color:#dc3a74;">Member Designation</h6>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Sl</th>
+                                                        <th scope="col">Designation</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Managibg Director</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>CEO</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>HR</td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- Button trigger modal -->
+                                        <br>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal3">Add Member Designation
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabe3" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h6 class="modal-title" id="exampleModalLabe3">Add Member
+                                                            Designation
+                                                        </h6>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div>
+                                                                <label>Add Designation</label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-control" type="text"
+                                                                    placeholder="Enter Member Type" required>
+                                                            </div>
+                                                            <div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Add</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger shadow-danger m-1"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="button"
+                                                            class="btn btn-success shadow-success m-1">Save
+                                                            changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
 
                             </div>
@@ -278,8 +406,191 @@
                 <!--End Row-->
 
 
-
                 <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header text-uppercase">Educational Information</div>
+                            <div class="card-body">
+                                {{-- SSC exam --}}
+                                <div class="card">
+                                    <div style="color:#dc3a74;" class="card-header text-uppercase">Secondary School
+                                        Certificate (SSC)</div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Institute Name</label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Institute Name">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="basic-select">Select Board</label>
+                                                <select class="form-control form-control-rounded" id="basic-select">
+                                                    <option value="">Select Board</option>
+                                                    <option value="Dhaka">Barishal</option>
+                                                    <option value="Comilla">Chittagong</option>
+                                                    <option value="Barishal">Comilla</option>
+                                                    <option value="Barishal">Dhaka</option>
+                                                    <option value="Barishal">Dinajpur</option>
+                                                    <option value="Barishal">Jessore</option>
+                                                    <option value="Barishal">Mymensing</option>
+                                                    <option value="Barishal">Rajshahi</option>
+                                                    <option value="Barishal">Sylhet</option>
+                                                    <option value="Barishal">Madrasha</option>
+                                                    <option value="Barishal">Technical</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Result & Passing Year <small>(Example: 3.65 -
+                                                        2021)</small></label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Member's Email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- HSC exam --}}
+                                <div class="card">
+                                    <div style="color:#dc3a74;" class="card-header text-uppercase">Higher Secondary
+                                        Certificate (HSC)</div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Institute Name</label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Institute Name">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="basic-select">Select Board</label>
+                                                <select class="form-control form-control-rounded" id="basic-select">
+                                                    <option value="">Select Board</option>
+                                                    <option value="Dhaka">Barishal</option>
+                                                    <option value="Comilla">Chittagong</option>
+                                                    <option value="Barishal">Comilla</option>
+                                                    <option value="Barishal">Dhaka</option>
+                                                    <option value="Barishal">Dinajpur</option>
+                                                    <option value="Barishal">Jessore</option>
+                                                    <option value="Barishal">Mymensing</option>
+                                                    <option value="Barishal">Rajshahi</option>
+                                                    <option value="Barishal">Sylhet</option>
+                                                    <option value="Barishal">Madrasha</option>
+                                                    <option value="Barishal">Technical</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Result & Passing Year <small>(Example: 3.65 -
+                                                        2021)</small></label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Member's Email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- University --}}
+                                <div class="card">
+                                    <div style="color:#dc3a74;" class="card-header text-uppercase">Bachelor Degree or
+                                        relevant</div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Institute Name</label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Institute Name">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Passing Year</small></label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Member's Email" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Result<small></small></label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Member's Email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Others tarining --}}
+                                <div class="card">
+                                    <div style="color:#dc3a74;" class="card-header text-uppercase">Others tarining
+                                        <small>If any</small></div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Institute Name</label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Institute Name">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Passing Year</small></label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Member's Email" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="rounded-input">Result<small></small></label>
+                                                <input type="text" id="rounded-input"
+                                                    class="form-control form-control-rounded"
+                                                    placeholder="Enter Member's Email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Row-->
+
+
+
+                {{-- <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header text-uppercase">Extra-Curricular Activities</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Hobbies <small> Example: Reading, Singing etc</small></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                            placeholder="Enter Member's Name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">About Your Self</label>
+                                        <textarea id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Tell us about your self in short"></textarea>
+                                    </div>
+                                    {{-- <div class="col-md-4">
+                                        <label for="rounded-input">Enter Email <span
+                                                style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                            placeholder="Enter Member's Email" required>
+                                    </div> --}}
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--End Row--> --}}
+
+
+
+
+
+
+    {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header text-uppercase">Select Input</div>
@@ -321,10 +632,10 @@
                         </div>
                     </div>
                 </div>
-                <!--End Row-->
+                <!--End Row--> --}}
 
 
-                <div class="row">
+    {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header text-uppercase">Inputs Sizing Options</div>
@@ -392,9 +703,9 @@
                         </div>
                     </div>
                 </div>
-                <!--End Row-->
+                <!--End Row--> --}}
 
-                <div class="row">
+    {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header text-uppercase">Inputs With Icons</div>
@@ -474,20 +785,20 @@
                         </div>
                     </div>
                 </div>
-                <!--End Row-->
+                <!--End Row--> --}}
 
-            </div>
-            <!-- End container-fluid-->
+    </div>
+    <!-- End container-fluid-->
 
-        </div>
-        <!--End content-wrapper-->
-        <!--Start Back To Top Button-->
-        <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-        <!--End Back To Top Button-->
+    </div>
+    <!--End content-wrapper-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
 
-        <!--Start footer-->
-        @include('adminpages.footer')
-        <!--End footer-->
+    <!--Start footer-->
+    @include('adminpages.footer')
+    <!--End footer-->
 
     </div>
     <!--End wrapper-->
