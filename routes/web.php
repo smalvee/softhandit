@@ -29,5 +29,16 @@ Route::get('/calender', function () {
     return view('adminpages/calender');
 })->middleware(['auth'])->name('calender');
 
+Route::get('/mail-inbox', function () {
+    return view('adminpages/mail-inbox');
+})->middleware(['auth'])->name('mail-inbox');
+
+Route::get('/mail-compose', function () {
+    return view('adminpages/mail-compose');
+})->middleware(['auth'])->name('mail-compose');
+
+Route::get('/mail-read', function () {
+    return view('adminpages/mail-read');
+})->middleware(['auth'])->name('mail-read');
 
 require __DIR__.'/auth.php';
