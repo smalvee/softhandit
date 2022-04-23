@@ -66,6 +66,12 @@
                             <li><a href="#">Under develop</a></li>
                         </ul>
                     </li>
+                    <li class="menu-has-children"><a href="">Sing Up</a>
+                        <ul>
+                            <li><a href="{{ route('login') }}">Admin</a></li>
+                            <li><a href="#">Employee</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>

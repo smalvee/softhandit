@@ -25,5 +25,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/calender', function () {
+    return view('adminpages/calender');
+})->middleware(['auth'])->name('calender');
+
 
 require __DIR__.'/auth.php';
