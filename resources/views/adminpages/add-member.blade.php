@@ -74,76 +74,11 @@
                     </div>
                 </div>
                 <!-- End Breadcrumb-->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header text-uppercase">Text Input</div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="basic-input">Basic Input</label>
-                                        <input type="text" id="basic-input" class="form-control">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="help-input">INPUT TEXT WITH HELP</label>
-                                        <br>
-                                        <small class="text-muted">someone@example.com</small>
-                                        <input type="text" id="help-input" class="form-control">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="disabled-input">DISABLED INPUT</label>
-                                        <input type="text" id="disabled-input" disabled="disabled"
-                                            class="form-control">
-                                    </div>
-
-                                </div>
-
-                                <div class="row mt-3">
-                                    <div class="col-md-4">
-                                        <label for="readonly-input">READONLY INPUT</label>
-                                        <input type="text" id="readonly-input" readonly="readonly"
-                                            class="form-control">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="placeholder-input">INPUT WITH PLACEHOLDER</label>
-                                        <input type="text" id="placeholder-input" class="form-control"
-                                            placeholder="Enter Email Address">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label>STATIC INPUT</label>
-                                        <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                            value="email@example.com">
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3">
-                                    <div class="col-md-4">
-                                        <label for="rounded-input">ROUNDED INPUT</label>
-                                        <input type="text" id="rounded-input"
-                                            class="form-control form-control-rounded">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="square-input">SQUARE INPUT</label>
-                                        <input type="text" id="square-input" class="form-control form-control-square"
-                                            placeholder="Enter Email Address">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label>WITH HELPER TEXT</label>
-                                        <input type="text" class="form-control" placeholder="Enter Email Address">
-                                        <small class="text-muted">email@example.com</small>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Row-->
 
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header text-uppercase">Textarea</div>
+                            <div class="card-header text-uppercase">Category Insertion Form</div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -164,6 +99,86 @@
                     </div>
                 </div>
                 <!--End Row-->
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header text-uppercase">Personal Information</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Name <span style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Member's Name" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Mobile Number <span style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Member's mobile number" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Email <span style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Member's Email" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Address <span style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Member's Address" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Date of Birth <span style="color: red;">*</span></label>
+                                        <input type="date" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Member's Email" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="basic-select">Select Identity Proof <span style="color: red;">*</span></label>
+                                        <select class="form-control form-control-rounded" id="basic-select">
+                                            <option value="">Select One</option>
+                                            <option value="NID">NID</option>
+                                            <option value="Passport">Passport</option>
+                                            <option value="Birth Certificate">Birth Certificate</option>
+                                        </select>
+                                    </div>
+                                    {{-- <div class="col-md-4">
+                                        <label>STATIC INPUT</label>
+                                        <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                                            value="email@example.com">
+                                    </div> --}}
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Identity Proof Number <span style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Identity Proof Number" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Upload Identity Document <span style="color: red;">*</span></label>
+                                        <input type="file" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Identity Proof Number" required>
+                                        <small class="text-muted"> formate support: JPEG, PNG</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rounded-input">Enter Emargency Contact Number <span style="color: red;">*</span></label>
+                                        <input type="text" id="rounded-input" class="form-control form-control-rounded"
+                                        placeholder="Enter Emargency Contact Number" required>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Row-->
+
+
 
                 <div class="row">
                     <div class="col-lg-12">
