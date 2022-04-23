@@ -90,7 +90,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="sidebar-submenu">
-                <li><a href="form-inputs.html"><i class="fa fa-circle-o"></i> Basic Inputs</a></li>
+                <li><a href="{{ url('add-member') }}"><i class="fa fa-circle-o"></i> Add Member</a></li>
                 {{-- <li><a href="form-input-group.html"><i class="fa fa-circle-o"></i> Input Groups</a></li>
                 <li><a href="form-basic-layouts.html"><i class="fa fa-circle-o"></i> Form Basic</a></li>
                 <li><a href="form-bordered-layouts.html"><i class="fa fa-circle-o"></i> Form Bordered</a></li>
@@ -144,7 +144,7 @@
                 <li><a href="table-color-tables.html"><i class="fa fa-circle-o"></i> Color Tables</a></li>
                 <li><a href="table-striped-color-tables.html"><i class="fa fa-circle-o"></i> Striped Color
                         Tables</a></li> --}}
-                <li><a href="table-data-tables.html"><i class="fa fa-circle-o"></i> Data Tables</a></li>
+                <li><a href="{{ url('team-member-list') }}"><i class="fa fa-circle-o"></i> Team Members</a></li>
             </ul>
         </li>
 
@@ -198,7 +198,7 @@
             </a>
             <ul class="sidebar-submenu">
                 {{-- <li><a href="pages-invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li> --}}
-                <li><a href="pages-user-profile.html"><i class="fa fa-circle-o"></i> User Profile</a></li>
+                {{-- <li><a href="pages-user-profile.html"><i class="fa fa-circle-o"></i> User Profile</a></li> --}}
                 {{-- <li><a href="pages-lock-screen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
                 <li><a href="pages-blank-page.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
                 <li><a href="pages-coming-soon.html"><i class="fa fa-circle-o"></i> Coming Soon</a></li>

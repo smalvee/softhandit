@@ -41,4 +41,12 @@ Route::get('/mail-read', function () {
     return view('adminpages/mail-read');
 })->middleware(['auth'])->name('mail-read');
 
+Route::get('/add-member', function () {
+    return view('adminpages/add-member');
+})->middleware(['auth'])->name('add-member');
+
+Route::get('/team-member-list', function () {
+    return view('adminpages/team-member-list');
+})->middleware(['auth'])->name('team-member-list');
+
 require __DIR__.'/auth.php';
