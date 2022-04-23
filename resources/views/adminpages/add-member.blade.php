@@ -37,7 +37,7 @@
         <!--End sidebar-wrapper-->
 
         <!--Start topbar header-->
-       @include('adminpages.header')
+        @include('adminpages.header')
         <!--End topbar header-->
 
         <div class="clearfix"></div>
@@ -82,18 +82,109 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label for="basic-textarea">BASIC TEXTAREA</label>
-                                        <textarea rows="4" class="form-control" id="basic-textarea"></textarea>
+                                        <h5>Member Type</h5>
+                                        <!-- Button trigger modal -->
+                                        <br>
+                                        <button class="btn btn-primary" type="button" data-toggle="modal"
+                                            data-target="#exampleModal">Add Member Type
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Add Member
+                                                            Type
+                                                        </h5>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div>
+                                                                <label>Add Type</label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-control" type="text"
+                                                                    placeholder="Enter Member Type" required>
+                                                            </div>
+                                                            <div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Add</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger shadow-danger m-1"
+                                                            data-dismiss="modal">Close</button>
+                                                        {{-- <button type="button"
+                                                            class="btn btn-success shadow-success m-1">Save
+                                                            changes</button> --}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="placeholder-textarea">TEXTAREA WITH PLACEHOLDER</label>
-                                        <textarea rows="4" class="form-control" id="placeholder-textarea" placeholder="textarea with placeholder"></textarea>
+                                        <h5>Member Depertment</h5>
+                                        <!-- Button trigger modal -->
+                                        <br>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal2">Add Member Depertment
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabe2" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabe2">Add Member
+                                                            Depertment
+                                                        </h5>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div>
+                                                                <label>Add Department</label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-control" type="text"
+                                                                    placeholder="Enter Member Type" required>
+                                                            </div>
+                                                            <div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Add</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger shadow-danger m-1"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="button"
+                                                            class="btn btn-success shadow-success m-1">Save
+                                                            changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="col-md-4">
+                                    {{-- <div class="col-md-4">
                                         <label for="discription-textarea">TEXTAREA WITH DISCRIPTION</label>
                                         <textarea rows="4" class="form-control" id="discription-textarea" placeholder="textarea with discription"></textarea>
-                                    </div>
+                                    </div> --}}
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -110,34 +201,39 @@
                                     <div class="col-md-4">
                                         <label for="rounded-input">Enter Name <span style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Member's Name" required>
+                                            placeholder="Enter Member's Name" required>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Enter Mobile Number <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Enter Mobile Number <span
+                                                style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Member's mobile number" required>
+                                            placeholder="Enter Member's mobile number" required>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Enter Email <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Enter Email <span
+                                                style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Member's Email" required>
+                                            placeholder="Enter Member's Email" required>
                                     </div>
                                 </div>
 
                                 <div class="row mt-3">
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Enter Address <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Enter Address <span
+                                                style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Member's Address" required>
+                                            placeholder="Enter Member's Address" required>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Enter Date of Birth <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Enter Date of Birth <span
+                                                style="color: red;">*</span></label>
                                         <input type="date" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Member's Email" required>
+                                            placeholder="Enter Member's Email" required>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label for="basic-select">Select Identity Proof <span style="color: red;">*</span></label>
+                                        <label for="basic-select">Select Identity Proof <span
+                                                style="color: red;">*</span></label>
                                         <select class="form-control form-control-rounded" id="basic-select">
                                             <option value="">Select One</option>
                                             <option value="NID">NID</option>
@@ -154,20 +250,23 @@
 
                                 <div class="row mt-3">
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Enter Identity Proof Number <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Enter Identity Proof Number <span
+                                                style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Identity Proof Number" required>
+                                            placeholder="Enter Identity Proof Number" required>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Upload Identity Document <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Upload Identity Document <span
+                                                style="color: red;">*</span></label>
                                         <input type="file" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Identity Proof Number" required>
+                                            placeholder="Enter Identity Proof Number" required>
                                         <small class="text-muted"> formate support: JPEG, PNG</small>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Enter Emargency Contact Number <span style="color: red;">*</span></label>
+                                        <label for="rounded-input">Enter Emargency Contact Number <span
+                                                style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Enter Emargency Contact Number" required>
+                                            placeholder="Enter Emargency Contact Number" required>
                                     </div>
 
                                 </div>
