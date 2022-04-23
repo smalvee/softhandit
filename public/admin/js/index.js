@@ -52,7 +52,7 @@ $(function() {
 // chart 2
 
     var ctx = document.getElementById("dashboard-chart-2").getContext('2d');
-   
+
       var gradientStroke3 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke3.addColorStop(0, 'rgba(255, 223, 64, 0.8)');
       gradientStroke3.addColorStop(1, 'rgba(255, 131, 89, 0.7)');
@@ -118,7 +118,7 @@ jQuery('#dashboard-map').vectorMap(
     markers : [{
         latLng : [21.00, 78.00],
         name : 'I Love My India'
-      
+
       }],
     hoverOpacity: null,
     normalizeFunction: 'linear',
@@ -148,8 +148,8 @@ $('#dashboard-chart-3').sparkline([5,6,7,8,9,10,12,13,15,14,13,12,10,9,8,10,12,1
             barColor: '#fff'
         });
 
-  
-// chart 4     
+
+// chart 4
 
      $("#dashboard-chart-4").sparkline([2,3,4,5,4,3,2,3,4,5,6,5,4,3,2,3,4,5,4,3,2,3,4,5,6,5,4,3,2], {
         type: 'discrete',
@@ -160,7 +160,7 @@ $('#dashboard-chart-3').sparkline([5,6,7,8,9,10,12,13,15,14,13,12,10,9,8,10,12,1
 
      });
 
-// chart 5     
+// chart 5
 
   $("#dashboard-chart-5").sparkline([3,5,3,7,5,10,3,6,5,7], {
             type: 'line',
@@ -170,7 +170,7 @@ $('#dashboard-chart-3').sparkline([5,6,7,8,9,10,12,13,15,14,13,12,10,9,8,10,12,1
             lineColor: '#fff',
             fillColor: 'transparent',
             spotColor: '#fff',
-    }); 
+    });
 
 
 
@@ -304,15 +304,15 @@ var ctx = document.getElementById("dashboard-chart-8").getContext('2d');
             }
         }
       });
-	  
-	  
+
+
 });
 
 
 
 
 // Index Notification
-	 
+
 	 function info_noti(){
 		Lobibox.notify('info', {
 		pauseDelayOnHover: true,
@@ -320,7 +320,7 @@ var ctx = document.getElementById("dashboard-chart-8").getContext('2d');
 		size: 'mini',
 		position: 'top right',
 		icon: 'fa fa-info-circle',
-		msg: 'This is Gradient Color Dashboard'
+		msg: 'Welcome To The Softhand IT Admin Dashboard'
 		});
 	  }
 
