@@ -317,7 +317,8 @@
                                 {{-- Others tarining --}}
                                 <div class="card">
                                     <div style="color:#dc3a74;" class="card-header text-uppercase">Others tarining
-                                        <small>If any</small></div>
+                                        <small>If any</small>
+                                    </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -349,6 +350,65 @@
                 </div>
                 <!--End Row-->
 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header text-uppercase">Personal Information</div>
+                            <div class="card-body">
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        <label for="basic-select">Select Member Type <span
+                                                style="color: red;">*</span></label>
+                                        <select class="form-control form-control-rounded" id="basic-select">
+                                            <option value="">Select One</option>
+                                            <?php
+                                            use App\Models\member_type;
+                                            $member_type = member_type::all();
+                                            ?>
+                                            @foreach ($member_type as $item)
+                                                <option value="NID">{{ $item->member_type }}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="basic-select">Select Department <span
+                                                style="color: red;">*</span></label>
+                                                <select class="form-control form-control-rounded" id="basic-select">
+                                                    <option value="">Select One</option>
+                                                    <?php
+                                                    use App\Models\member_department;
+                                                    $member_department = member_department::all();
+                                                    ?>
+                                                    @foreach ($member_department as $item)
+                                                        <option value="NID">{{ $item->member_department }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="basic-select">Select Designation <span
+                                                style="color: red;">*</span></label>
+                                                <select class="form-control form-control-rounded" id="basic-select">
+                                                    <option value="">Select One</option>
+                                                    <?php
+                                                    use App\Models\member_designation;
+                                                    $member_designation = member_designation::all();
+                                                    ?>
+                                                    @foreach ($member_designation as $item)
+                                                        <option value="NID">{{ $item->member_designation }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Row-->
+
 
 
                 {{-- <div class="row">
@@ -358,34 +418,37 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label for="rounded-input">Hobbies <small> Example: Reading, Singing etc</small></label>
+                                        <label for="rounded-input">Hobbies <small> Example: Reading, Singing
+                                                etc</small></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
                                             placeholder="Enter Member's Name">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="rounded-input">About Your Self</label>
                                         <textarea id="rounded-input" class="form-control form-control-rounded"
-                                        placeholder="Tell us about your self in short"></textarea>
+                                            placeholder="Tell us about your self in short"></textarea>
                                     </div>
-                                    {{-- <div class="col-md-4">
+                                    <div class="col-md-4">
                                         <label for="rounded-input">Enter Email <span
                                                 style="color: red;">*</span></label>
                                         <input type="text" id="rounded-input" class="form-control form-control-rounded"
                                             placeholder="Enter Member's Email" required>
-                                    </div> --}}
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    <!--End Row--> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Row--> --}}
 
 
 
 
 
 
-    {{-- <div class="row">
+
+
+                {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header text-uppercase">Select Input</div>
@@ -430,7 +493,7 @@
                 <!--End Row--> --}}
 
 
-    {{-- <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header text-uppercase">Inputs Sizing Options</div>
@@ -500,7 +563,7 @@
                 </div>
                 <!--End Row--> --}}
 
-    {{-- <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header text-uppercase">Inputs With Icons</div>
@@ -582,18 +645,18 @@
                 </div>
                 <!--End Row--> --}}
 
-    </div>
-    <!-- End container-fluid-->
+            </div>
+            <!-- End container-fluid-->
 
-    </div>
-    <!--End content-wrapper-->
-    <!--Start Back To Top Button-->
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <!--End Back To Top Button-->
+        </div>
+        <!--End content-wrapper-->
+        <!--Start Back To Top Button-->
+        <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+        <!--End Back To Top Button-->
 
-    <!--Start footer-->
-    @include('adminpages.footer')
-    <!--End footer-->
+        <!--Start footer-->
+        @include('adminpages.footer')
+        <!--End footer-->
 
     </div>
     <!--End wrapper-->
