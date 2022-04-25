@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\MemberDepartmentController;
+use App\Http\Controllers\MemberDesignationController;
 use App\Http\Controllers\MemberTypeController;
+use App\Models\member_designation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +63,9 @@ Route::get('delete_member_type/{id}', [MemberTypeController::class, 'destroy'])-
 
 Route::post('add_member_department', [MemberDepartmentController::class, 'store'])->middleware(['auth']);
 Route::get('delete_member_department/{id}', [MemberDepartmentController::class, 'destroy'])->middleware(['auth']);
+
+Route::post('add_member_designation', [MemberDesignationController::class, 'store'])->middleware(['auth']);
+Route::get('delete_member_designation/{id}', [MemberDesignationController::class, 'destroy'])->middleware(['auth']);
 
 
 require __DIR__.'/auth.php';

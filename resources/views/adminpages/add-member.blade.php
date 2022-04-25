@@ -100,80 +100,10 @@
 
                                     <div class="col-md-4">
                                         <h6 style="color:#dc3a74;">Member Designation</h6>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Sl</th>
-                                                        <th scope="col">Designation</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Managibg Director</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>CEO</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>HR</td>
-
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        @include('member_designation.index')
                                         <!-- Button trigger modal -->
                                         <br>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal3">Add Member Designation
-                                        </button>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
-                                            aria-labelledby="exampleModalLabe3" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h6 class="modal-title" id="exampleModalLabe3">Add Member
-                                                            Designation
-                                                        </h6>
-                                                        <button type="button" class="close"
-                                                            data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
-                                                            <div>
-                                                                <label>Add Designation</label>
-                                                            </div>
-                                                            <div>
-                                                                <input class="form-control" type="text"
-                                                                    placeholder="Enter Member Type" required>
-                                                            </div>
-                                                            <div>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Add</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger shadow-danger m-1"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="button"
-                                                            class="btn btn-success shadow-success m-1">Save
-                                                            changes</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @include('member_designation.create')
 
                                     </div>
                                 </div>
