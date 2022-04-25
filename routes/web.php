@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MemberDepartmentController;
 use App\Http\Controllers\MemberTypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,8 +53,14 @@ Route::get('/team-member-list', function () {
 
 // Route::resource('member_type', MemberTypeController::class)->middleware(['auth']);
 // Route::post('member_type', MemberTypeController::class, 'store')->middleware(['auth']);
-Route::get('member_type', [MemberTypeController::class, 'index'])->middleware(['auth']);
+
 Route::post('add_member_type', [MemberTypeController::class, 'store'])->middleware(['auth']);
+// Route::get('member_type', [MemberTypeController::class, 'index'])->middleware(['auth']);
 Route::get('delete_member_type/{id}', [MemberTypeController::class, 'destroy'])->middleware(['auth']);
+
+
+Route::post('add_member_department', [MemberDepartmentController::class, 'store'])->middleware(['auth']);
+Route::get('delete_member_department/{id}', [MemberDepartmentController::class, 'destroy'])->middleware(['auth']);
+
 
 require __DIR__.'/auth.php';

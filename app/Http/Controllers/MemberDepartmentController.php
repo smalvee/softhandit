@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\member_type;
+use App\Models\member_department;
 use Illuminate\Http\Request;
 
-class MemberTypeController extends Controller
+class MemberDepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MemberTypeController extends Controller
      */
     public function index()
     {
-        return view('member_type.index');
+        return view('member_department.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class MemberTypeController extends Controller
      */
     public function create()
     {
-        return view('member_type.create');
+        return view('member_department.create');
     }
 
     /**
@@ -34,33 +34,32 @@ class MemberTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
-        $member_type = new Member_Type;
+    {
+        $member_department = new Member_Department;
 
-        $member_type->member_type =  $request->input('member_type');
-        $member_type->save();
+        $member_department->member_department =  $request->input('member_department');
+        $member_department->save();
         return redirect()->back()->with('status', 'Add seccessfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\member_type  $member_type
+     * @param  \App\Models\member_department  $member_department
      * @return \Illuminate\Http\Response
      */
-    public function show(member_type $member_type)
+    public function show(member_department $member_department)
     {
-        // $member_type = member_Type::all();
-        // return view('member_type.index', compact('member_type'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\member_type  $member_type
+     * @param  \App\Models\member_department  $member_department
      * @return \Illuminate\Http\Response
      */
-    public function edit(member_type $member_type)
+    public function edit(member_department $member_department)
     {
         //
     }
@@ -69,10 +68,10 @@ class MemberTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\member_type  $member_type
+     * @param  \App\Models\member_department  $member_department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, member_type $member_type)
+    public function update(Request $request, member_department $member_department)
     {
         //
     }
@@ -80,12 +79,12 @@ class MemberTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\member_type  $member_type
+     * @param  \App\Models\member_department  $member_department
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $data=member_Type::find($id);
+        $data=member_department::find($id);
         $data->delete();
         return redirect()->back();
     }
