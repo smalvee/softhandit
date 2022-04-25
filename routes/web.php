@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MemberTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,5 +49,11 @@ Route::get('/add-member', function () {
 Route::get('/team-member-list', function () {
     return view('adminpages/team-member-list');
 })->middleware(['auth'])->name('team-member-list');
+
+// Route::resource('member_type', MemberTypeController::class)->middleware(['auth']);
+// Route::post('member_type', MemberTypeController::class, 'store')->middleware(['auth']);
+Route::get('member_type', [MemberTypeController::class, 'index'])->middleware(['auth']);
+Route::post('add_member_type', [MemberTypeController::class, 'store'])->middleware(['auth']);
+Route::get('delete_member_type/{id}', [MemberTypeController::class, 'destroy'])->middleware(['auth']);
 
 require __DIR__.'/auth.php';
