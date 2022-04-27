@@ -75,7 +75,7 @@ class TeamController extends Controller
         $create_team_member->member_department              =  $request->input('member_department');
         $create_team_member->member_designation             =  $request->input('member_designation');
         $create_team_member->save();
-        return redirect()->back()->with('status', 'Add seccessfully');
+        return redirect()->back()->with('status', 'Added seccessfully');
     }
 
     /**

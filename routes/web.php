@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MemberDepartmentController;
 use App\Http\Controllers\MemberDesignationController;
+use App\Http\Controllers\MemberProfileController;
 use App\Http\Controllers\MemberTypeController;
 use App\Http\Controllers\TeamController;
 use App\Models\member_designation;
@@ -54,6 +55,12 @@ Route::get('/team-member-list', function () {
     return view('adminpages/team-member-list');
 })->middleware(['auth'])->name('team-member-list');
 
+// Route::get('/member_profile', function () {
+//     return view('adminpages/member_profile');
+// })->middleware(['auth']);
+
+
+
 // Route::resource('member_type', MemberTypeController::class)->middleware(['auth']);
 // Route::post('member_type', MemberTypeController::class, 'store')->middleware(['auth']);
 
@@ -68,7 +75,9 @@ Route::get('delete_member_department/{id}', [MemberDepartmentController::class, 
 Route::post('add_member_designation', [MemberDesignationController::class, 'store'])->middleware(['auth']);
 Route::get('delete_member_designation/{id}', [MemberDesignationController::class, 'destroy'])->middleware(['auth']);
 
-Route::post('create_team', [TeamController::class, 'store']);
+Route::get('member_profile/{id}', [MemberProfileController::class, 'index'])->middleware(['auth']);
+
+
 
 
 require __DIR__.'/auth.php';
