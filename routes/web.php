@@ -3,6 +3,7 @@
 use App\Http\Controllers\MemberDepartmentController;
 use App\Http\Controllers\MemberDesignationController;
 use App\Http\Controllers\MemberTypeController;
+use App\Http\Controllers\TeamController;
 use App\Models\member_designation;
 use Illuminate\Support\Facades\Route;
 
@@ -66,6 +67,8 @@ Route::get('delete_member_department/{id}', [MemberDepartmentController::class, 
 
 Route::post('add_member_designation', [MemberDesignationController::class, 'store'])->middleware(['auth']);
 Route::get('delete_member_designation/{id}', [MemberDesignationController::class, 'destroy'])->middleware(['auth']);
+
+Route::post('create_team', [TeamController::class, 'store']);
 
 
 require __DIR__.'/auth.php';
