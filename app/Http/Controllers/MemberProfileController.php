@@ -22,9 +22,9 @@ class MemberProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('member_profile.create', compact('id'));
     }
 
     /**
@@ -35,7 +35,17 @@ class MemberProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $member_profile = new Member_Profile;
+
+        $member_profile->main_id            =  $request->input('main_id');
+        $member_profile->about_yourself     =  $request->input('about_yourself');
+        $member_profile->hobbies            =  $request->input('hobbies');
+        $member_profile->salary             =  $request->input('salary');
+        $member_profile->profile_picture    =  $request->input('profile_picture');
+        $member_profile->save();
+        return redirect()->back()->with('status', 'Add seccessfully');
     }
 
     /**
@@ -69,7 +79,27 @@ class MemberProfileController extends Controller
      */
     public function update(Request $request, member_profile $member_profile)
     {
-        //
+        $member_profile =Member_Profile::find($request->pp_id);
+        $member_profile->about_yourself     =  $request->input('about_yourself');
+        $member_profile->hobbies            =  $request->input('hobbies');
+        $member_profile->save();
+        return redirect()->back()->with('status', 'Add seccessfully');
+    }
+
+    public function update_profile_picture(Request $request, member_profile $member_profile)
+    {
+        $member_profile =Member_Profile::find($request->picture_id);
+
+        if ($request->hasfile('profile_picture')) {
+
+            $file = $request->file('profile_picture');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('uploads/profile/', $filename);
+            $member_profile->profile_picture = $filename;
+        }
+        $member_profile->save();
+        return redirect()->back()->with('status', 'Add seccessfully');
     }
 
     /**

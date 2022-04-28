@@ -42,6 +42,7 @@
 
         <?php
         use App\Models\team;
+        use App\Models\member_profile;
 
         $mainid = $id;
 
@@ -91,8 +92,20 @@
                                 <div class="card">
                                     <div class="card-body text-center bg-primary rounded-top">
                                         <div class="user-box">
-                                            <img src="../admin//images/avatars/avatar-1.png" alt="user avatar" />
+                                            <?php
+
+                                                $member_id = member_profile::where('main_id', $id)->get();
+                                                $check = null;
+                                                ?>
+
+                                                @foreach ($member_id as $id)
+                                                    <img src="../uploads/profile/{{ $id->profile_picture }}"
+                                                        alt="user avatar" />
+                                                @endforeach
+
+
                                         </div>
+
                                         <h5 class="mb-1 text-white">{{ $item->member_name }}</h5>
                                         <h6 class="text-light">{{ $item->member_designation }}</h6>
                                     </div>
@@ -118,13 +131,49 @@
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="list-icon">
-                                                    <i class="fa fa-globe"></i>
+                                                    <i class="fa fa-money"></i>
                                                 </div>
-                                                <div class="list-details">
-                                                    <span>www.example.com</span>
-                                                    <small>Website Address</small>
-                                                </div>
+
+
+                                                @foreach ($member_id as $id)
+                                                    <?php $check = $id->main_id; ?>
+                                                    <div class="list-details">
+                                                        <span>{{ $id->salary }}</span>
+                                                        <small>Salary</small>
+                                                    </div>
+                                                @endforeach
                                             </li>
+                                            <form action="{{ url('create_member_profile') }}" method="POST">
+                                                @csrf
+
+                                                <?php
+                                                    if ($check == NULL) { ?>
+                                                <li class="list-group-item">
+                                                    <div class="list-icon">
+                                                        <i class="fa fa-money"></i>
+                                                    </div>
+
+                                                    <div class="list-details">
+                                                        <input type="hidden" name="main_id" value="{{ $item->id }}">
+                                                        <input type="hidden" name="about_yourself">
+                                                        <input type="hidden" name="hobbies">
+                                                        <span>Insert Salary</span>
+                                                        <input class="form-control" type="number" name="salary"
+                                                            placeholder="Ensert Salary" required>
+                                                        <input type="hidden" name="profile_picture">
+
+                                                    </div>
+                                                </li>
+
+
+                                                <button type="submit" class="btn btn-primary">Publish Profile</button>
+                                                <?php }
+                                                    else { ?>
+                                                <label class="btn btn-primary">Published</label>
+                                                <?php }
+                                                ?>
+
+                                            </form>
                                         </ul>
                                         {{-- <div class="row text-center mt-4">
                                             <div class="col p-2">
@@ -141,6 +190,7 @@
                                             </div>
                                         </div> --}}
                                     </div>
+
                                     {{-- <div class="card-footer text-center">
                                         <a href="javascript:void()"
                                             class="btn-social btn-facebook waves-effect waves-light m-1"><i
@@ -158,6 +208,15 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
+                        <?php
+                        if ($check == NULL) { ?>
+                        {{-- <button type="submit" class="btn btn-primary">Publish Profile</button> --}}
+                        <?php }
+                        else { ?>
                         <div class="col-lg-8">
                             <div class="card">
                                 <div class="card-body">
@@ -169,8 +228,8 @@
                                         </li>
                                         <li class="nav-item">
                                             <a href="javascript:void();" data-target="#messages" data-toggle="pill"
-                                                class="nav-link"><i class="icon-envelope-open"></i> <span
-                                                    class="hidden-xs">Messages</span></a>
+                                                class="nav-link"><i class="icon-user"></i> <span
+                                                    class="hidden-xs">Change Profile Picture</span></a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="javascript:void();" data-target="#edit" data-toggle="pill"
@@ -185,11 +244,23 @@
                                                 <div class="col-md-6">
                                                     <h6>About</h6>
                                                     <p>
-                                                        Web Designer, UI/UX Engineer
+                                                        <?php
+                                                            if ($id->about_yourself == NULL) {?>
+                                                    <p style="color: red;">Please Complete Your Profile In edit option
+                                                    </p>
+                                                    <?php }
+                                                            ?>
+                                                    {{ $id->about_yourself }}
                                                     </p>
                                                     <h6>Hobbies</h6>
                                                     <p>
-                                                        Indie music, skiing and hiking. I love the great outdoors.
+                                                        <?php
+                                                            if ($id->hobbies == NULL) {?>
+                                                    <p style="color: red;">Please Complete Your Profile In edit option
+                                                    </p>
+                                                    <?php }
+                                                            ?>
+                                                    {{ $id->hobbies }}
                                                     </p>
                                                 </div>
                                                 <div class="col-md-6">
@@ -226,17 +297,18 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td>
-                                                                    <strong>Abby</strong> joined ACME Project Team in
-                                                                    <strong>`Collaboration`</strong>
+                                                                    <strong>{{ $item->member_name }}</strong> Next
+                                                                    Working update will arrive here soon
+                                                                    <strong>`Keep update`</strong>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            {{-- <tr>
                                                                 <td>
                                                                     <strong>Gary</strong> deleted My Board1 in
                                                                     <strong>`Discussions`</strong>
                                                                 </td>
                                                             </tr>
-                                                            {{-- <tr>
+                                                            <tr>
                                                                 <td>
                                                                     <strong>Kensington</strong> deleted MyBoard3 in
                                                                     <strong>`Discussions`</strong>
@@ -269,11 +341,34 @@
                                                     <i class="icon-info"></i>
                                                 </div>
                                                 <div class="alert-message">
-                                                    <span><strong>Info!</strong> Lorem Ipsum is simply dummy
-                                                        text.</span>
+                                                    <span><strong>Info!</strong>Upload Latest Photo</span>
                                                 </div>
                                             </div>
-                                            <table class="table table-hover table-striped">
+
+                                            <div>
+                                                <form action="{{ url('update_profile_picture') }}" method="POST"
+                                                    enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label">Change
+                                                            profile</label>
+                                                        <div class="col-lg-9">
+                                                            <input type="hidden" name="picture_id"
+                                                                value="{{ $id->id }}">
+                                                            <input name="profile_picture" class="form-control"
+                                                                type="file">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label
+                                                            class="col-lg-3 col-form-label form-control-label"></label>
+                                                        <div class="col-lg-9">
+                                                            <input type="submit" class="btn btn-primary" value="Upload">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            {{-- <table class="table table-hover table-striped">
                                                 <tbody>
                                                     <tr>
                                                         <td>
@@ -309,103 +404,106 @@
                                                         </td>
                                                     </tr>
                                                 </tbody>
-                                            </table>
+                                            </table> --}}
                                         </div>
                                         <div class="tab-pane" id="edit">
-                                            <form>
+                                            <form action="{{ url('member_profile_update') }}" method="POST">
+                                                @csrf
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label form-control-label">First
-                                                        name</label>
+                                                    <label
+                                                        class="col-lg-3 col-form-label form-control-label">Name</label>
                                                     <div class="col-lg-9">
-                                                        <input class="form-control" type="text" value="Mark">
+                                                        <input type="hidden" name="pp_id" value="{{ $id->id }}">
+                                                        <input class="form-control" type="text"
+                                                            value="{{ $item->member_name }}" readonly>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label form-control-label">Last
-                                                        name</label>
-                                                    <div class="col-lg-9">
-                                                        <input class="form-control" type="text" value="Jhonsan">
-                                                    </div>
-                                                </div>
+
                                                 <div class="form-group row">
                                                     <label
                                                         class="col-lg-3 col-form-label form-control-label">Email</label>
                                                     <div class="col-lg-9">
                                                         <input class="form-control" type="email"
-                                                            value="mark@example.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label form-control-label">Change
-                                                        profile</label>
-                                                    <div class="col-lg-9">
-                                                        <input class="form-control" type="file">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-lg-3 col-form-label form-control-label">Website</label>
-                                                    <div class="col-lg-9">
-                                                        <input class="form-control" type="url" value="">
+                                                            value="{{ $item->member_email }}" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label
                                                         class="col-lg-3 col-form-label form-control-label">Address</label>
                                                     <div class="col-lg-9">
-                                                        <input class="form-control" type="text" value=""
-                                                            placeholder="Street">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                                    <div class="col-lg-6">
-                                                        <input class="form-control" type="text" value=""
-                                                            placeholder="City">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <input class="form-control" type="text" value=""
-                                                            placeholder="State">
+                                                        <input class="form-control" type="text"
+                                                            value="{{ $item->member_address }}" placeholder="Street"
+                                                            readonly>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row">
                                                     <label
-                                                        class="col-lg-3 col-form-label form-control-label">Username</label>
+                                                        class="col-lg-3 col-form-label form-control-label">Hobbies</label>
                                                     <div class="col-lg-9">
-                                                        <input class="form-control" type="text" value="jhonsanmark">
+                                                        <input class="form-control" type="text" name="hobbies"
+                                                            value="{{ $id->hobbies }}">
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group row">
-                                                    <label
-                                                        class="col-lg-3 col-form-label form-control-label">Password</label>
+                                                    <label class="col-lg-3 col-form-label form-control-label">About
+                                                        Yourself</label>
                                                     <div class="col-lg-9">
-                                                        <input class="form-control" type="password"
-                                                            value="11111122333">
+                                                        <input class="form-control" type="text" name="about_yourself"
+                                                            value="{{ $id->about_yourself }}">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label form-control-label">Confirm
-                                                        password</label>
-                                                    <div class="col-lg-9">
-                                                        <input class="form-control" type="password"
-                                                            value="11111122333">
-                                                    </div>
-                                                </div>
+
+
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                                     <div class="col-lg-9">
-                                                        <input type="reset" class="btn btn-secondary" value="Cancel">
-                                                        <input type="button" class="btn btn-primary"
-                                                            value="Save Changes">
+                                                        <button type="submit" class="btn btn-primary">Update
+                                                            Info</button>
                                                     </div>
                                                 </div>
                                             </form>
+
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php }
+                    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     </div>
                 @endforeach

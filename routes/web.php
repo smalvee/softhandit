@@ -77,6 +77,11 @@ Route::get('delete_member_designation/{id}', [MemberDesignationController::class
 
 Route::get('member_profile/{id}', [MemberProfileController::class, 'index'])->middleware(['auth']);
 
+Route::post('create_member_profile', [MemberProfileController::class, 'store'])->middleware(['auth']);
+Route::post('member_profile_update', [MemberProfileController::class, 'update'])->middleware(['auth']);
+Route::post('update_profile_picture', [MemberProfileController::class, 'update_profile_picture'])->middleware(['auth']);
+
+
 
 
 
